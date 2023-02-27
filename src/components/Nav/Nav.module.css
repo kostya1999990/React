@@ -1,6 +1,7 @@
 .nav {
 	background-color: rgb(183, 242, 212);
 	grid-area: nav;
+	padding: 10px 20px;
 }
 .menu {
 	display: grid;
@@ -9,8 +10,12 @@
 	text-decoration: none;
 	color: #000;
 	font-size: 18px;
+	transition-duration: 0.3s;
+	padding: 5px 10px;
+	margin: 3px 0px;
+	background-color: rgb(205, 201, 201);
+	border-radius: 5px;
 }
 .menu a.active {
 	color: #ffffff;
-	font-size: 20px;
 }
