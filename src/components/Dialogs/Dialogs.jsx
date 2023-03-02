@@ -4,11 +4,10 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import Messages from "./Messages/Messages";
 
 
-
-
 const Dialogs = (props) => {
-	let dialogsElements = props.dialogs.map(d => <DialogsItem id={d.id} name={d.name} />)
-	let messagesElements = props.message.map(m => <Messages id={m.id} mess={m.mess} />)
+
+	let dialogsElements = props.state.dialogsPage.dialogs.map(d => <DialogsItem id={d.id} name={d.name} state={props.state} />)
+	let messagesElements = props.state.dialogsPage.message.Kostya.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)
 
 	return (
 

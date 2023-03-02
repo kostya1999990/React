@@ -9,7 +9,7 @@ function Profile(props) {
 		<div>
 			<ProfileMainImage />
 			<ProfileInfo />
-			<MyPosts posts={props.posts} />
+			<MyPosts posts={props.state.profilePage.posts} />
 		</div >
 	)
 }

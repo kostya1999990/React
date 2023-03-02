@@ -19,3 +19,15 @@
 .menu a.active {
 	color: #ffffff;
 }
+.sidebar__title {
+	width: 100%;
+	font-size: 26px;
+	text-align: center;
+	font-weight: 700;
+	color: #3d3fc5;
+	margin: 20px 0px 15px 0px;
+}
+.sidebar__items {
+	display: flex;
+	justify-content: space-between;
+}

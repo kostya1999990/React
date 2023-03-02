@@ -1,4 +1,50 @@
 .dialogs__message {
-	padding: 5px 10px;
-	margin: 5px 0px;
+	position: relative;
+	width: 70%;
+	color: #fff;
+	font-size: 16px;
+}
+.dialogs__message__body {
+	width: 100%;
+}
+.dialogs__message.my {
+	padding: 10px 10px 10px 30px;
+	margin: 5px auto 5px 0px;
+	border-radius: 0px 10px 10px 10px;
+	text-align: left;
+	background-color: #b1b1b1;
+}
+.my::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 0 solid transparent;
+	border-top-width: 0px;
+	border-bottom-width: 13px;
+	border-right: 13px solid #b1b1b1;
+	border-radius: 5px 0px 0px 0px;
+	left: -11px;
+	top: 0;
+}
+
+.dialogs__message.enemy {
+	padding: 10px 30px 10px 10px;
+	margin: 5px 0px 5px auto;
+	border-radius: 10px 0px 10px 10px;
+	text-align: right;
+	background-color: #38aa5e;
+}
+.enemy::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 0 solid transparent;
+	border-bottom-width: 13px;
+	border-top-width: 0px;
+	border-left: 13px solid #38aa5e;
+	border-radius: 0px 5px 0px 0px;
+	right: -11px;
+	top: 0;
 }
