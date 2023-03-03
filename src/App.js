@@ -20,8 +20,8 @@ function App(props) {
 			<Nav state={props.state} />
 			<main className="main">
 				<Routes>
-					<Route path='/profile' element={<Profile state={props.state} />} />
-					<Route path='/dialogs' element={<Dialogs state={props.state} />} />
+					<Route path='/profile' element={<Profile state={props.state} addPost={props.addPost} />} />
+					<Route path='/dialogs' element={<Dialogs state={props.state} addMessage={props.addMessage} />} />
 					<Route path='/news' element={<News />} />
 					<Route path='/music' element={<Music />} />
 					<Route path='/settings' element={<Settings />} />
