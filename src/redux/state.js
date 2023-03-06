@@ -5,7 +5,8 @@ let state = {
 		posts: [
 			{ id: 1, message: "Hello, My name Kostya", likesCount: 23 },
 			{ id: 2, message: "I wont education! I learn React", likesCount: 20 }
-		]
+		],
+		newPostText: ''
 	},
 	dialogsPage: {
 		dialogs: [
@@ -26,12 +27,12 @@ let state = {
 				{ id: 5, mess: "Of cours! I'll be there in 10 minutes", own: "my" }
 			],
 			Valera: [
-				{ id: 1, mess: "Hi", own: "my" },
-				{ id: 2, mess: "What's app bro? How are you?", own: "enemy" },
-				{ id: 3, mess: "I'm good thanks! and you?", own: "my" },
-				{ id: 4, mess: "I'm too!", own: "enemy" },
-				{ id: 5, mess: "Go in my home!", own: "enemy" },
-				{ id: 5, mess: "Of cours! I'll be there in 10 minutes", own: "my" }
+				{ id: 1, mess: "YOYOYO PRIVET", own: "my" },
+				{ id: 2, mess: "What is PRIVET?", own: "enemy" },
+				{ id: 3, mess: "azazaza", own: "my" },
+				{ id: 4, mess: "I'm don't understand ou", own: "enemy" },
+				{ id: 5, mess: "eto prikolno", own: "enemy" },
+				{ id: 5, mess: "Net, ne prikolno", own: "my" }
 			],
 			Lika: [
 				{ id: 1, mess: "Hi", own: "my" },
@@ -41,7 +42,8 @@ let state = {
 				{ id: 5, mess: "Go in my home!", own: "enemy" },
 				{ id: 5, mess: "Of cours! I'll be there in 10 minutes", own: "my" }
 			]
-		}
+		},
+		newMessage: 'new Message'
 	},
 	sidebar: [
 		{ id: 1, name: 'Kostya', img: "https://www.befunky.com/images/prismic/5ddfea42-7377-4bef-9ac4-f3bd407d52ab_landing-photo-to-cartoon-img5.jpeg?auto=avif,webp&format=jpg&width=863" },
@@ -51,24 +53,35 @@ let state = {
 
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
 	let newPost = {
 		id: 3,
-		message: postMessage,
+		message: state.profilePage.newPostText,
 		likesCount: 0
 	};
 	state.profilePage.posts.push(newPost);
+	state.profilePage.newPostText = '';
 	rerenderEntireTree(state);
 }
 
-export let addMessage = (message) => {
+export let addMessage = () => {
 	let newMess = {
 		id: 6,
-		mess: message,
+		mess: state.dialogsPage.newMessage,
 		own: "my"
 	};
 	state.dialogsPage.message.Kostya.push(newMess);
+	state.dialogsPage.newMessage = '';
 	rerenderEntireTree(state);
+
 }
 
+export let funcNewPostText = (text) => {
+	state.profilePage.newPostText = text;
+	rerenderEntireTree(state);
+}
+export let funcNewMessage = (text) => {
+	state.dialogsPage.newMessage = text;
+	rerenderEntireTree(state);
+}
 export default state;
