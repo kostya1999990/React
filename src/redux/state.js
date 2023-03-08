@@ -56,7 +56,7 @@ let store = {
 	getState() {
 		return this._state;
 	},
-	_rerenderEntireTree() { },
+	_callSubscriber() { },
 	addPost() {
 		let newPost = {
 			id: 3,
@@ -65,7 +65,7 @@ let store = {
 		};
 		this._state.profilePage.posts.push(newPost);
 		this._state.profilePage.newPostText = '';
-		this._rerenderEntireTree(this._state);
+		this._callSubscriber(this._state);
 	},
 	addMessage() {
 		let newMess = {
@@ -75,19 +75,19 @@ let store = {
 		};
 		this._state.dialogsPage.message.Kostya.push(newMess);
 		this._state.dialogsPage.newMessage = '';
-		this._rerenderEntireTree(this._state);
+		this._callSubscriber(this._state);
 
 	},
 	funcNewPostText(text) {
 		this._state.profilePage.newPostText = text;
-		this._rerenderEntireTree(this._state);
+		this._callSubscriber(this._state);
 	},
 	funcNewMessage(text) {
 		this._state.dialogsPage.newMessage = text;
-		this._rerenderEntireTree(this._state);
+		this._callSubscriber(this._state);
 	},
 	subscribe(observer) {
-		this._rerenderEntireTree = observer;
+		this._callSubscriber = observer;
 	}
 
 }
