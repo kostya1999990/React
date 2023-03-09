@@ -10,7 +10,7 @@ function MyPosts(props) {
 	return (
 		<div className={s.main__posts}>
 			<div className={s.main__title}>My posts</div>
-			<Form addPost={props.addPost} newPostText={props.newPostText} funcNewPostText={props.funcNewPostText} />
+			<Form dispatch={props.dispatch} newPostText={props.newPostText} />
 			{postElements}
 		</div>
 	)

@@ -9,7 +9,7 @@ function Profile(props) {
 		<div>
 			<ProfileMainImage />
 			<ProfileInfo />
-			<MyPosts posts={props.profilePage.posts} addPost={props.addPost} newPostText={props.profilePage.newPostText} funcNewPostText={props.funcNewPostText} />
+			<MyPosts posts={props.profilePage.posts} dispatch={props.dispatch} newPostText={props.profilePage.newPostText} />
 		</div >
 	)
 }

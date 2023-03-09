@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogs-reducer"
+import profileReducer from "./profile-reducer"
+import sidebarReducer from "./sidebar-reducer"
 
 let store = {
 
@@ -53,43 +56,22 @@ let store = {
 		]
 
 	},
+	_callSubscriber() { },
 	getState() {
 		return this._state;
 	},
-	_callSubscriber() { },
-	addPost() {
-		let newPost = {
-			id: 3,
-			message: this._state.profilePage.newPostText,
-			likesCount: 0
-		};
-		this._state.profilePage.posts.push(newPost);
-		this._state.profilePage.newPostText = '';
-		this._callSubscriber(this._state);
-	},
-	addMessage() {
-		let newMess = {
-			id: 6,
-			mess: this._state.dialogsPage.newMessage,
-			own: "my"
-		};
-		this._state.dialogsPage.message.Kostya.push(newMess);
-		this._state.dialogsPage.newMessage = '';
-		this._callSubscriber(this._state);
-
-	},
-	funcNewPostText(text) {
-		this._state.profilePage.newPostText = text;
-		this._callSubscriber(this._state);
-	},
-	funcNewMessage(text) {
-		this._state.dialogsPage.newMessage = text;
-		this._callSubscriber(this._state);
-	},
 	subscribe(observer) {
 		this._callSubscriber = observer;
+	},
+	dispatch(action) {
+		this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+		this._state.profilePage = profileReducer(this._state.profilePage, action);
+		this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+		this._callSubscriber(this._state);
 	}
 
 }
+
+
 
 export default store;

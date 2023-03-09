@@ -1,4 +1,5 @@
 import React from "react";
+import { addMessageActionCreator, funcNewMessageActionCreator } from "../../redux/dialogs-reducer";
 import s from "./Dialogs.module.css"
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Messages from "./Messages/Messages";
@@ -11,14 +12,13 @@ const Dialogs = (props) => {
 	let messagesElements = props.dialogsPage.message.Kostya.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)
 	// let messagesElements1 = props.dialogsPage.message.Valera.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)
 
-	let messElement = React.createRef();
 	let addMessageElement = () => {
-		props.addMessage();
+		props.dispatch(addMessageActionCreator());
 	}
 
-	let newMessageText = () => {
-		let text = messElement.current.value;
-		props.funcNewMessage(text);
+	let newMessageText = (e) => {
+		let text = e.currentTarget.value;
+		props.dispatch(funcNewMessageActionCreator(text));
 	}
 	return (
 
@@ -32,7 +32,7 @@ const Dialogs = (props) => {
 
 					<div className={s.dialogs__but}>
 						<div className={s.main__form} action="#" method="get">
-							<textarea ref={messElement} className={s.form__textarea} value={props.dialogsPage.newMessage} onChange={newMessageText} type="text" placeholder="your text..." />
+							<textarea className={s.form__textarea} value={props.dialogsPage.newMessage} onChange={newMessageText} type="text" placeholder="your text..." />
 							<div className={s.button__body}>
 								<button className={`${s.form__button} button`} onClick={addMessageElement} type="submit">Send</button>
 							</div>
