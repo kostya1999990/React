@@ -1,6 +1,7 @@
 .dialogs__message {
 	position: relative;
-	width: 70%;
+	max-width: 500px;
+	word-wrap: break-word;
 	color: #fff;
 	font-size: 16px;
 }
