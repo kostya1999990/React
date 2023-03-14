@@ -6,6 +6,7 @@ let initialState = [
 ];
 
 const sidebarReducer = (state = initialState, action) => {
+	let stateCopy = { ...state }
 	return state;
 }
 

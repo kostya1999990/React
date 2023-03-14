@@ -13,18 +13,24 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
 
 	switch (action.type) {
-		case ADD_POST:
+		case ADD_POST: {
 			let newPost = {
 				id: 3,
 				message: state.newPostText,
 				likesCount: 0
 			};
-			state.posts.push(newPost);
-			state.newPostText = '';
-			return state;
-		case FUNC_NEW_POST_TEXT:
-			state.newPostText = action.text;
-			return state;
+			return {
+				...state, //Копируем state (Путь stateCopy.state)
+				newPostText: '',//Копируем newPostText (Путь stateCopy.newPostText)
+				posts: [...state.posts, newPost],//Копируем массив posts и push'им newPost (типо создаем массив сразу с newPost) (Путь stateCopy.posts)
+			}
+		}
+		case FUNC_NEW_POST_TEXT: {
+			return {
+				...state,
+				newPostText: action.text
+			}
+		}
 		default:
 			return state;
 	}
