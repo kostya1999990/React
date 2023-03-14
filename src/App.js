@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
+import NavContainer from './components/Nav/NavContainer';
 import Profile from './components/Profile/Profile';
 import Footer from './components/Footer/Footer';
 import News from './components/News/News';
@@ -17,7 +17,7 @@ function App(props) {
 	return (
 		<div className="wrapper" >
 			<Header />
-			<Nav state={props.state} />
+			<NavContainer />
 			<main className="main">
 				<Routes>
 					<Route path='/profile' element={<Profile store={props.store} dispatch={props.dispatch} />} />

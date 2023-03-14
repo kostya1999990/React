@@ -4,14 +4,14 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import Messages from "./Messages/Messages";
 
 
-
 const Dialogs = (props) => {
-
 	let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogsItem id={d.id} name={d.name} />)
 	let messagesElements = props.dialogsPage.message.Kostya.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)
 	// let messagesElements1 = props.dialogsPage.message.Valera.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)
 
-
+	let newMessageElement = () => {
+		props.addMessageElement();
+	}
 	let newMessageText = (e) => {
 		let text = e.currentTarget.value;
 		props.funcNewMessage(text);
@@ -30,7 +30,7 @@ const Dialogs = (props) => {
 						<div className={s.main__form} action="#" method="get">
 							<textarea className={s.form__textarea} value={props.newMessage} onChange={newMessageText} type="text" placeholder="your text..." />
 							<div className={s.button__body}>
-								<button className={`${s.form__button} button`} onClick={() => props.addMessageElement()} type="submit">Send</button>
+								<button className={`${s.form__button} button`} onClick={newMessageElement} type="submit">Send</button>
 							</div>
 						</div>
 					</div>

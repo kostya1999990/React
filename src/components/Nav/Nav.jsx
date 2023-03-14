@@ -5,9 +5,9 @@ import Sidebar from "./Sidebar/Sidebar";
 
 
 function Nav(props) {
-	let sidebarElements = props.state.sidebar.map(sb => <Sidebar id={sb.id} name={sb.name} img={sb.img} />)
+	let sidebarElements = props.sidebar.map(sb => <Sidebar id={sb.id} name={sb.name} img={sb.img} />)
 	return (
-		<nav className={s.nav}>
+		<div className={s.nav}>
 			<ul className={s.menu}>
 				<NavLink to="/profile" className={navData => navData.isActive ? s.active : s.menu}>Profile</NavLink>
 				<NavLink to="/dialogs" className={navData => navData.isActive ? s.active : s.menu} >Messages</NavLink>
@@ -21,7 +21,7 @@ function Nav(props) {
 					{sidebarElements}
 				</div>
 			</div>
-		</nav >
+		</div >
 	)
 }
 
