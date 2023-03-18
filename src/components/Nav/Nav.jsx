@@ -13,6 +13,7 @@ function Nav(props) {
 				<NavLink to="/dialogs" className={navData => navData.isActive ? s.active : s.menu} >Messages</NavLink>
 				<NavLink to="/news" className={navData => navData.isActive ? s.active : s.menu} >News</NavLink>
 				<NavLink to="/music" className={navData => navData.isActive ? s.active : s.menu} >Music</NavLink>
+				<NavLink to="/find" className={navData => navData.isActive ? s.active : s.menu}>Find users</NavLink>
 				<NavLink to="/settings" className={navData => navData.isActive ? s.active : s.menu} >Settings</NavLink>
 			</ul>
 			<div className={s.sidebar}>
@@ -26,3 +27,6 @@ function Nav(props) {
 }
 
 export default Nav;
+
+
+

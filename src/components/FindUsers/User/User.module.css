@@ -1,0 +1,57 @@
+.user {
+	font-size: 16px;
+	width: 100%;
+	padding: 10px 20px;
+	margin: 0px 0px 20px 0px;
+	color: #757474;
+}
+.user__body {
+	width: 100%;
+	display: flex;
+}
+.user__photo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 0px;
+	width: 120px;
+}
+.user__photo img {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin: 0px 0px 10px 0px;
+	object-fit: cover;
+}
+.user__body__acc {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: 2px solid #949494;
+	padding: 15px;
+	border-radius: 10px;
+}
+.user__inf {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.user__name {
+	font-size: 20px;
+	font-weight: 700;
+}
+.user__status {
+}
+.user__city {
+	font-size: 18px;
+}
+.user__button__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 110px;
+}
+.user__button {
+	width: 80px;
+}

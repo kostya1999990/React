@@ -4,7 +4,6 @@ import { addMessageActionCreator, funcNewMessageActionCreator } from "../../redu
 import Dialogs from "./Dialogs";
 
 
-
 const mapStateToProps = (state) => {
 	return {
 		dialogsPage: state.dialogsPage,
