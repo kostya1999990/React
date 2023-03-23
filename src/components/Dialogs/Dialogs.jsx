@@ -4,31 +4,6 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import Messages from "./Messages/Messages";
 
 
-let mass = {
-	name: "Kostya",
-	age: 23,
-	family: {
-		mother: "Lena",
-		father: "Yura",
-		brother: "Valera",
-		wife: "Anjelika",
-		friends: {
-			one: "Maks",
-			two: "Murad",
-			three: "Dima",
-			four: "Andrey"
-		}
-	}
-}
-
-let mass1 = mass;
-mass1.age = "123";
-let mass2 = { ...mass1 };
-mass2.family = { ...mass1.family }
-mass2.family.friends = { ...mass1.family.friends }
-mass2.name = "Dima";
-mass2.family.friends.one = "Nice";
-
 const Dialogs = (props) => {
 	let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogsItem id={d.id} name={d.name} />)
 	let messagesElements = props.dialogsPage.message.Kostya.map(m => <Messages id={m.id} mess={m.mess} own={m.own} />)

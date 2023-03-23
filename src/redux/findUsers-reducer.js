@@ -13,7 +13,7 @@ let findUsersReducer = (state = initialState, action) => {
 				...state,
 				users: state.users.map(u => {
 					if (u.id === action.userId) {
-						return ({ ...u, sub: true })
+						return ({ ...u, followed: true })
 					}
 					return u;
 				})
@@ -23,7 +23,7 @@ let findUsersReducer = (state = initialState, action) => {
 				...state,
 				users: state.users.map(u => {
 					if (u.id === action.userId) {
-						return ({ ...u, sub: false })
+						return ({ ...u, followed: false })
 					}
 					return u;
 				})
