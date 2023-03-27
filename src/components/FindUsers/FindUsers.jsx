@@ -4,9 +4,7 @@ import User from "./User/User";
 import boy from "../../assets/img/boy.png"
 
 
-
 let FindUsers = (props) => {
-	debugger
 	let pagesCount = Math.ceil(props.totalUserCount / props.pageSize)
 	let pages = [];
 	for (let i = 1; i <= pagesCount; i++) pages.push(i);
