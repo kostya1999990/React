@@ -50,25 +50,15 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		follow: (userId) => {
-			return dispatch(followActionCreator(userId));
-		},
-		unfollow: (userId) => {
-			return dispatch(unfollowActionCreator(userId));
-		},
-		setUsers: (users, totalCount) => {
-			return dispatch(setUsersActionCreator(users, totalCount));
-		},
-		changeCurrentPage: (currentPage) => {
-			return dispatch(changePageActionCreator(currentPage))
-		},
-		toggleIsFeaching: (isFeatching) => {
-			dispatch(isFeachingActionCreator(isFeatching))
-		}
-	}
+let mapDispatchToProps = {
+	follow: followActionCreator,
+	unfollow: unfollowActionCreator,
+	setUsers: setUsersActionCreator,
+	changeCurrentPage: changePageActionCreator,
+	toggleIsFeaching: isFeachingActionCreator,
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);;
+
+export default connect(mapStateToProps, mapDispatchToProps
+)(UsersContainer);;

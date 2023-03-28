@@ -4,24 +4,16 @@ import { addMessageActionCreator, funcNewMessageActionCreator } from "../../redu
 import Dialogs from "./Dialogs";
 
 
-const mapStateToProps = (state) => {
+let mapStateToProps = (state) => {
 	return {
 		dialogsPage: state.dialogsPage,
 		newMessage: state.dialogsPage.newMessage
 	}
 }
-const mapDispatchToProps = (dispatch) => {
-	return {
-		addMessageElement: () => {
-			dispatch(addMessageActionCreator());
-		},
-		funcNewMessage: (text) => {
-			dispatch(funcNewMessageActionCreator(text));
-		}
-	}
+let mapDispatchToProps = {
+	addMessageElement: addMessageActionCreator,
+	funcNewMessage: funcNewMessageActionCreator
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
-
-export default DialogsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Dialogs);

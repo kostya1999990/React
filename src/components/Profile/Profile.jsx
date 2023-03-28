@@ -8,8 +8,8 @@ function Profile(props) {
 	return (
 		<div>
 			<ProfileMainImage />
-			<ProfileInfo />
-			<MyPostsContainer store={props.store} />
+			<ProfileInfo profile={props.profile} />
+			<MyPostsContainer />
 		</div >
 	)
 }
