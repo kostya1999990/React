@@ -5,6 +5,7 @@ import ProfileImg from "./ProfileImg/ProfileImg";
 import Preloader from "../../../common/Preloader/Preloader";
 
 function ProfileInfo(props) {
+	debugger
 	if (!props.profile) {
 		return <Preloader />
 	}
@@ -12,7 +13,7 @@ function ProfileInfo(props) {
 	return (
 		<div className={`${s.main__profile} ${s.profile}`}>
 			<ProfileImg photo={props.profile.photos.large} />
-			<ProfileDescription myName="Kostya T." myDate="2 jun" myCity="Tumen" myEducation="College" mySite="http://sezoni4.ru" />
+			<ProfileDescription myName={props.profile.fullName} myDate="2 jun" myCity="Tumen" myEducation="College" mySite="http://sezoni4.ru" />
 		</div>
 	)
 }
