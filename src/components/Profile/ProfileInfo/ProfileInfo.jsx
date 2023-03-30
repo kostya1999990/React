@@ -5,11 +5,9 @@ import ProfileImg from "./ProfileImg/ProfileImg";
 import Preloader from "../../../common/Preloader/Preloader";
 
 function ProfileInfo(props) {
-	debugger
 	if (!props.profile) {
 		return <Preloader />
 	}
-	debugger
 	return (
 		<div className={`${s.main__profile} ${s.profile}`}>
 			<ProfileImg photo={props.profile.photos.large} />

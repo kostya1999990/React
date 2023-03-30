@@ -1,8 +1,10 @@
 .header {
 	background-color: rgb(237, 143, 120);
 	grid-area: header;
+	display: flex;
+	justify-content: space-between;
 }
-.header img {
+.header > img {
 	height: 100%;
 	margin: 0px 0px 0px 20px;
 }

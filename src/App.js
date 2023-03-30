@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
 import NavContainer from './components/Nav/NavContainer';
 import Footer from './components/Footer/Footer';
 import News from './components/News/News';
@@ -10,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import MusicContainer from './components/Music/MusicContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 
@@ -17,12 +17,12 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 function App(props) {
 	return (
 		<div className="wrapper" >
-			<Header />
+			<HeaderContainer />
 			<NavContainer />
 			<main className="main">
 				<Routes>
 					<Route path='/profile/:userId?' element={<ProfileContainer />} />
-					<Route path='/dialogs' element={<DialogsContainer />} />
+					<Route path='/dialogs/:userId?' element={<DialogsContainer />} />
 					<Route path='/news' element={<News />} />
 					<Route path='/music' element={<MusicContainer />} />
 					<Route path='/find' element={<FindUsersContainer />} />

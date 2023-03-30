@@ -1,0 +1,28 @@
+.header__auth {
+	max-width: 400px;
+	height: 100%;
+	display: flex;
+}
+.auth__image {
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.auth__image img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.auth__name {
+	padding: 0px 15px 0px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.auth__name span {
+	overflow-wrap: anywhere;
+	font-size: 18px;
+	color: rgb(80, 77, 77);
+}
